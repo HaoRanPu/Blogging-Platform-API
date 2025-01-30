@@ -45,7 +45,7 @@ This project is a simple RESTful API for a personal blogging platform built usin
 
 - **URL**: `PUT /posts/{id}`
 - **Request Body**:
-  ```
+  ```json
   {
     "title": "My Updated Blog Post",
     "content": "This is the updated content of my blog post.",
@@ -84,13 +84,13 @@ This project is a simple RESTful API for a personal blogging platform built usin
 
 1. **Build the Project**:
 
-   ```
+   ```bash
    mvn clean install
    ```
 
 2. **Run the Application**:
 
-   ```
+   ```bash
    mvn spring-boot:run
    ```
 
