@@ -37,24 +37,24 @@ public class GetBlogPostServiceTest {
     @Test
     public void given_blog_post_exists_when_get_blog_post_service_return_blog_post(){
         BlogPost blogPost = new BlogPost();
-        blogPost.setId((long) 1);
+        blogPost.setId(1L);
         blogPost.setTitle("My First Blog Post");
         blogPost.setContent("This is the content of my first blog post.");
         blogPost.setCategory("Technology");
         blogPost.setTags(List.of("Tech", "Programming"));
-        when(blogPostRepository.findById((long) 1)).thenReturn(Optional.of(blogPost));
+        when(blogPostRepository.findById(1L)).thenReturn(Optional.of(blogPost));
 
-        ResponseEntity<BlogPost> response = getBlogPostService.execute((long) 1);
+        ResponseEntity<BlogPost> response = getBlogPostService.execute(1L);
 
         assertEquals(ResponseEntity.ok(blogPost), response);
-        verify(blogPostRepository, times(1)).findById((long) 1);
+        verify(blogPostRepository, times(1)).findById(1L);
     }
 
     @Test
     public void given_blog_post_not_exists_when_get_blog_post_service_throw_blog_post_not_found_exception(){
-        when(blogPostRepository.findById((long) 1)).thenReturn(Optional.empty());
+        when(blogPostRepository.findById(1L)).thenReturn(Optional.empty());
 
         assertThrows(BlogPostNotFoundException.class, () -> getBlogPostService.execute((long) 1));
-        verify(blogPostRepository, times(1)).findById((long) 1);
+        verify(blogPostRepository, times(1)).findById(1L);
     }
 }

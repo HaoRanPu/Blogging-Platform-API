@@ -42,9 +42,9 @@ public class BlogPostValidationTest {
     @Test
     void given_blog_post_when_empty_tags_then_should_fail_validation() {
         BlogPost blogPost = new BlogPost();
-        blogPost.setTitle("Valid Title");
-        blogPost.setContent("Valid Content");
-        blogPost.setCategory("Tech");
+        blogPost.setTitle("My First Blog Post");
+        blogPost.setContent("This is the content of my first blog post.");
+        blogPost.setCategory("Technology");
         blogPost.setTags(List.of()); // Empty list should trigger @Size(min = 1)
 
         Set<ConstraintViolation<BlogPost>> violations = validator.validate(blogPost);

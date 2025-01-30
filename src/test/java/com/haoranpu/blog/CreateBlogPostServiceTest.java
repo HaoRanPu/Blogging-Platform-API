@@ -41,7 +41,7 @@ public class CreateBlogPostServiceTest {
         blogPost.setTags(List.of("Tech", "Programming"));
 
         BlogPost savedBlogPost = new BlogPost();
-        savedBlogPost.setId((long) 1);
+        savedBlogPost.setId(1L);
         savedBlogPost.setTitle("My First Blog Post");
         savedBlogPost.setContent("This is the content of my first blog post.");
         savedBlogPost.setCategory("Technology");
